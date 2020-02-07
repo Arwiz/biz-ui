@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {provider} from '../../Model/model';
-import {ProviderListService} from '../../services/provider-list.service'
+import {Provider} from '../../Model/Provider';
+import {ProviderListService} from '../../services/provider-list.service';
 import {MatTableDataSource} from '@angular/material/table';
+import {saveAs} from 'file-saver';
 
 @Component({
   selector: 'app-provider',
@@ -11,28 +12,33 @@ import {MatTableDataSource} from '@angular/material/table';
 
 
 export class ProviderComponent implements OnInit {
-  private newdatatype: provider[];
-  private datadisplay: provider[];
-  dataSource;
+  dataSource = new MatTableDataSource<Provider>();
   displayedColumns: string[] = ['position', 'name'];
 
 
   constructor(private ser: ProviderListService) {
-    this.datadisplay = this.ser.getdata();
   }
 
   ngOnInit() {
     this.ser.getProviders().subscribe(data => {
-      this.newdatatype = data;
-    })
-    this.dataSource = new MatTableDataSource(this.datadisplay);
+      this.ser.setProviders(data);
+      this.dataSource.data = data;
+    });
   }
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  click() {
-    console.log('hello')
+  click(ele: any) {
+    if (ele && ele.id) {
+      this.ser.downloadPdf(ele.id).subscribe((data) => {
+          const blob = new Blob([data], {type: 'application/pdf'});
+          saveAs(blob, `Provider#${ele.id}.pdf`);
+        },
+        error1 => {
+          console.log('Error', error1);
+        });
+    }
   }
 }

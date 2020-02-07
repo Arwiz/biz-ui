@@ -1,16 +1,15 @@
 .heading{
     background: rgb(59, 50, 50);
-    color: honeydew;
+    color: beige;
+}
 
-}
-.contCol{
-    background: rgb(201, 230, 162);
-}
-.contColinside{
-    background: rgb(180, 218, 130);
-}
 .descriptionText {
     border-radius: 25px;
     background: #73AD21;
-  }
+}
 
+.titleText{
+  font-family: 'Tangerine', serif;
+  font-size: 48px;
+  color: crimson;
+}

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {ProviderListService} from '../../services/provider-list.service';
-import {provider} from '../../Model/model';
+import {Provider} from '../../Model/Provider';
 
 @Component({
   selector: 'app-detail-provider',
@@ -9,9 +9,8 @@ import {provider} from '../../Model/model';
   styleUrls: ['./detail-provider.component.css']
 })
 export class DetailProviderComponent implements OnInit {
-  dataFetch: provider;
+  dataFetch: Provider;
   id: string;
-  rateingValue: number;
 
   constructor(private route: ActivatedRoute, private ser: ProviderListService) { }
 
@@ -20,7 +19,6 @@ export class DetailProviderComponent implements OnInit {
     this.route.paramMap.subscribe((parmselemnt) => {
       this.id = parmselemnt.get('id')
       this.dataFetch = this.ser.fetchdetails(this.id);
-      this.rateingValue = this.dataFetch.rating;
     });
   }
 

@@ -7,7 +7,7 @@
         class="form-control" id="exampleInputEmail1"
          aria-describedby="emailHelp" placeholder="Search(by ISP name,price,rating)">
       </div>
-      <table mat-table [dataSource]="dataSource" class="w-100">
+      <table mat-table  *ngIf="dataSource" [dataSource]="dataSource" class="w-100">
           <ng-container matColumnDef="position">
             <th mat-header-cell *matHeaderCellDef> Provider </th>
             <td mat-cell *matCellDef="let element"> <a  routerLink="/detailProvider/{{element.name}}">{{element.name}} </a></td>
@@ -15,9 +15,9 @@
           <!-- Name Column -->
           <ng-container matColumnDef="name">
             <th mat-header-cell *matHeaderCellDef >Price </th>
-            <td mat-cell *matCellDef="let element"><a href="#"> {{element.lowest_price}} <i class="fas fa-download"></i> </a></td>
+            <td mat-cell *matCellDef="let element" (click)="click(element)"><a href="#"> {{element.lowest_price}} <i class="fas fa-download"></i> </a></td>
           </ng-container>
-        <tr (onFocus)='click()' mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
   </div>
   <div class="part" style="background-color: rgb(201, 230, 142);">

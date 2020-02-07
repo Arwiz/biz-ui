@@ -1,8 +1,8 @@
 <div class="container mt-2">
-  <div class="col">
+  <div class="col" *ngIf="dataFetch else waiting_content">
   <div class="row">
     <div class="col">
-      <div class="container ">
+      <div class="container" >
         <div class="row form-control form-control-lg heading">
           <div class="col">
             {{dataFetch.name}}
@@ -36,9 +36,12 @@
       </div>
     </div>
   </div>
-      <app-rating class="p-3" [rating]='rateingValue' [maxRating]="5"></app-rating>
+    <app-rating class="p-3" [rating]='dataFetch.rating' [maxRating]="5"></app-rating>
     <div class='descriptionText m-1 p-3'> {{dataFetch.description}}</div>
   </div>
+  <ng-template #waiting_content>
+    <div class="titleText text-center"> Select provider to view details</div>
+  </ng-template>
 </div>
 
 
