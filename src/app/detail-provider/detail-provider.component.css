@@ -1,0 +1,65 @@
+.heading{
+    background: rgb(59, 50, 50);
+    color: honeydew;
+
+}
+.contCol{
+    background: rgb(201, 230, 162);
+}
+.contColinside{
+    background: rgb(180, 218, 130);
+}
+.cont-width{
+    width: 200px;
+}
+.col-st{
+    margin-left: 40px;
+}
+
+
+.wrapper {
+    display:inline-block;
+    width: 40px;
+    position: relative;
+    cursor:pointer;
+
+}
+
+.wrapper::before{
+    content:"\2605";
+    position: absolute;
+    font-size: 50px;
+    color: rgb(245, 248, 66);
+}
+.wrapper1 input{
+    display: none;
+}
+.wrapper1{
+    display:inline-block;
+    width: 40px;
+    position: relative;
+    cursor:pointer;
+
+}
+.wrapper1::before{
+    content:"\2605";
+    position: absolute;
+    font-size: 50px;
+    color: rgb(20, 20, 4);
+}
+.rcorners1 {
+    border-radius: 25px;
+    background: #73AD21;
+    padding: 20px;
+    width: auto;
+    height: auto;
+  }
+.star{
+    content:"\2605";
+    display:inline-block;
+    position: absolute;
+    font-size: 50px;
+    color: rgb(245, 248, 66);
+    cursor:pointer;
+
+}
