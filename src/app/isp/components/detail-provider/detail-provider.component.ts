@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {ProviderListService} from '../provider-list.service';
-import {provider} from '../Model/model';
+import {ProviderListService} from '../../services/provider-list.service';
+import {provider} from '../../Model/model';
 
 @Component({
   selector: 'app-detail-provider',

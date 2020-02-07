@@ -1,0 +1,45 @@
+<div class="container mt-2">
+  <div class="col">
+  <div class="row">
+    <div class="col">
+      <div class="container ">
+        <div class="row form-control form-control-lg heading">
+          <div class="col">
+            {{dataFetch.name}}
+          </div>
+        </div>
+        <div class="row form-control form-control-lg" >
+          <div class="col" (focus)="focus()">
+            <i class="fas fa-wifi"></i> Max.Speed:{{dataFetch.max_speed}}
+          </div>
+        </div>
+        <div class="row form-control form-control-lg " >
+          <div class="col">
+            <i class="fas fa-phone-square-alt"></i> {{dataFetch.contact_number}}
+          </div>
+        </div>
+        <div class="row form-control form-control-lg" >
+          <div class="col">
+            <i class="fas fa-envelope"></i> {{dataFetch.email}}
+          </div>
+        </div>
+        <div class="row form-control form-control-lg" >
+          <div class="col">
+            <i class="fas fa-money-check-alt"></i> Min.Plane:{{dataFetch.lowest_price}}
+          </div>
+        </div>
+        <div class="row form-control form-control-lg ">
+          <div class="col">
+            <i class="fas fa-envelope"></i> {{dataFetch.email}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+      <app-rating class="p-3" [rating]='rateingValue' [maxRating]="5"></app-rating>
+    <div class='descriptionText m-1 p-3'> {{dataFetch.description}}</div>
+  </div>
+</div>
+
+
+

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {provider} from '../Model/model';
-import {ProviderListService} from '../provider-list.service'
+import {provider} from '../../Model/model';
+import {ProviderListService} from '../../services/provider-list.service'
 import {MatTableDataSource} from '@angular/material/table';
 
 @Component({
@@ -23,12 +23,9 @@ export class ProviderComponent implements OnInit {
 
   ngOnInit() {
     this.ser.getProviders().subscribe(data => {
-      this.newdatatype = data
-      console.log('service ' + this.newdatatype);
+      this.newdatatype = data;
     })
-    console.log(this.newdatatype);
     this.dataSource = new MatTableDataSource(this.datadisplay);
-
   }
 
   applyFilter(filterValue: string) {

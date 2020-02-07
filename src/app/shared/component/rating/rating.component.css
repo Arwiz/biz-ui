@@ -1,0 +1,13 @@
+
+.starList{
+  display: flex;
+  /*flex-direction: row;*/
+}
+.icon-star{
+  height: 20px;
+  width: 20px;
+}
+
+.flex-container {
+  display: flex;
+}
